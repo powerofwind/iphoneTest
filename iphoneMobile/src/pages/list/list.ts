@@ -11,7 +11,7 @@ import { productAVG } from '../../models/productAVG';
 export class ListPage {
 
   public allproduct: product[];
-  public productAVG: number = 0;
+  public productAVG: string;
   public sumTotal: number = 0;
   public sumAmount: number = 0;
   constructor(public http: HttpClient, public navCtrl: NavController) {
@@ -31,6 +31,6 @@ export class ListPage {
       this.sumTotal += data[i].total;
       this.sumAmount += data[i].amount;
     }
-    this.productAVG = this.sumTotal / this.sumAmount ;
+    this.productAVG = (this.sumTotal / this.sumAmount).toFixed(2) ;
   }
 }
