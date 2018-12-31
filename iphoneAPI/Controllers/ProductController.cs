@@ -52,23 +52,34 @@ namespace iphoneAPI.Controllers
         }
 
 
-        private static List<ProductsAVG> allproductAVG = new List<ProductsAVG>();
+        // private static averaged allproductAVG = new averaged();
 
-        [HttpGet ("GetAVG")]
-        public ActionResult<IEnumerable<ProductsAVG>> GetAVG()
+        // [HttpGet("GetAVG")]
+        // public ActionResult<averaged> GetAVG()
+        // {
+        //     var newProductsAVG = new ProductsAVG
+        //     {
+        //         ProductGroup = allproduct,
+        //         Average = Math.Round(allproduct.Average(it => it.Total), 2)
+        //     };
+
+        //     allproductAVG.Add(newProductsAVG);
+        //     return allproductAVG;
+        // }
+
+        [HttpGet ("Getgg")]
+        public ProductsAVG Getgg()
         {
-            var newProductsAVG = new ProductsAVG
+            var cr = new ProductsAVG
             {
                 ProductGroup = allproduct,
                 Average = Math.Round(allproduct.Average(it => it.Total), 2)
             };
-
-            allproductAVG.Add(newProductsAVG);
-            return allproductAVG;
+            return cr;
         }
 
-        
     }
-
 }
+
+
 
