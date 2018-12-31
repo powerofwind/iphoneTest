@@ -11,7 +11,7 @@ namespace iphoneAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private static int count = 01;
+        private static int count = 1;
         private static List<Products> allproduct = new List<Products>();
 
         [HttpPost]
@@ -45,8 +45,6 @@ namespace iphoneAPI.Controllers
         }
 
 
-
-        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Products>> Get()
         {
@@ -54,8 +52,23 @@ namespace iphoneAPI.Controllers
         }
 
 
+        private static List<ProductsAVG> allproductAVG = new List<ProductsAVG>();
 
+        [HttpGet ("GetAVG")]
+        public ActionResult<IEnumerable<ProductsAVG>> GetAVG()
+        {
+            var newProductsAVG = new ProductsAVG
+            {
+                ProductGroup = allproduct,
+                Average = Math.Round(allproduct.Average(it => it.Total), 2)
+            };
 
+            allproductAVG.Add(newProductsAVG);
+            return allproductAVG;
+        }
 
+        
     }
+
 }
+
