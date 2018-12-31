@@ -17,13 +17,13 @@
     <ion-item col-2 text-center> กลุ่ม</ion-item>
   </ion-row>
 
-  <ion-row>
-    <ion-item col-2 text-center>รหัสสินค้า</ion-item>
-    <ion-item col-2 text-center>ชื่อสินค้า</ion-item>
-    <ion-item col-2 text-center>ราคา</ion-item>
-    <ion-item col-2 text-center>จำนวน</ion-item>
-    <ion-item col-2 text-center>ราคารวม</ion-item>
-    <ion-item col-2 text-center> กลุ่ม</ion-item>
+  <ion-row *ngFor="let item of products">
+    <ion-item col-2 text-center>{{item.id}}</ion-item>
+    <ion-item col-2 text-center>{{item.name}}</ion-item>
+    <ion-item col-2 text-center>{{item.price}}</ion-item>
+    <ion-item col-2 text-center>{{item.amount}}</ion-item>
+    <ion-item col-2 text-center>{{item.total}}</ion-item>
+    <ion-item col-2 text-center>{{ item.group}}</ion-item>
   </ion-row>
 
   <ion-card>

@@ -1,4 +1,4 @@
-export class HomePage {
+export class product {
     public id: string;
     public name: string;
     public price: number;
