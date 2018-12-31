@@ -12,6 +12,10 @@ export class ListPage {
   public products: product[];
 
   constructor(public http: HttpClient, public navCtrl: NavController) {
+    
+  }
+
+  ionViewWillEnter(){
     this.http.get<product[]>("https://localhost:5001/api/Product").subscribe(
       it => {
         console.log(it)

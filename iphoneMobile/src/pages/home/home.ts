@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
+import { ListPage } from '../list/list';
 
 @Component({
   selector: 'page-home',
@@ -25,6 +26,8 @@ export class HomePage {
         it => {
           console.log('success')
         });
+
+    this.navCtrl.push(ListPage);
   }
 
 }
