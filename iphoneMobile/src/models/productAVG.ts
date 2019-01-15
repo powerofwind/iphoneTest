@@ -1,6 +1,6 @@
 import { product } from "./product";
 
 export class productAVG {
-   public allproduct: product[]
+   public productGroup: product[]
    public average: number;
 }

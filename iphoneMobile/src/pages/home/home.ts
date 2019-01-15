@@ -25,9 +25,14 @@ export class HomePage {
       }).subscribe(
         it => {
           console.log('success')
+          alert("test");
         });
 
+  }
+
+  push(){
     this.navCtrl.push(ListPage);
   }
+
 
 }

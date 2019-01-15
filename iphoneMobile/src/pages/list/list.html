@@ -17,7 +17,7 @@
     <ion-item col-2 text-center> กลุ่ม</ion-item>
   </ion-row>
 
-  <ion-row *ngFor="let item of allproduct">
+  <!-- <ion-row *ngFor="let item of allproduct">
     <ion-item col-2 text-center>{{item.id}} </ion-item>
     <ion-item col-2 text-center>{{item.name}}</ion-item>
     <ion-item col-2 text-center>{{item.price}}</ion-item>
@@ -30,7 +30,26 @@
     <ion-row>
       <ion-item col-6 text-center>ราคาเฉลี่ยต่อชิ้น :</ion-item>
       <ion-item col-6 text-center>{{this.productAVG}}</ion-item>
-    </ion-row>
-  </ion-card>
+    </ion-row> -->
+
+    <div *ngIf="allproduct2 != null">
+      <ion-row *ngFor="let item of allproduct2.productGroup">
+        <ion-item col-2 text-center>{{item.id}} </ion-item>
+        <ion-item col-2 text-center>{{item.name}}</ion-item>
+        <ion-item col-2 text-center>{{item.price}}</ion-item>
+        <ion-item col-2 text-center>{{item.amount}}</ion-item>
+        <ion-item col-2 text-center>{{item.total}}</ion-item>
+        <ion-item col-2 text-center>{{ item.group}}</ion-item>
+      </ion-row>
+      <ion-card>
+   
+        <ion-item >{{allproduct2.average}}</ion-item>
+    </ion-card>
+    </div>
+    
+    <div *ngIf="allproduct2 == null">
+      <p>ไม่มีค่า</p>
+    </div>
+    
 
 </ion-content>
