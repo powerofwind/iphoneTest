@@ -52,13 +52,24 @@ namespace iphoneAPI.Controllers
         }
 
 
-        [HttpGet ("GetAVG")]
+        [HttpGet("GetAVG")]
         public ProductsAVG GetAVG()
         {
+            double sumTotal = 0;
+            double sumAmount = 0;
+
+            for (var i = 0; i < allproduct.Count; i++)
+            {
+                sumTotal += allproduct[i].Total;
+                sumAmount += allproduct[i].Amount;
+            }
+           
+           double productAVG = (sumTotal / sumAmount);
+
             var allAVG = new ProductsAVG
             {
                 ProductGroup = allproduct,
-                Average = Math.Round(allproduct.Average(it => it.Total), 2)
+                Average = Math.Round(productAVG, 2)
             };
             return allAVG;
         }
